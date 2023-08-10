@@ -58,12 +58,12 @@ git commit
 
 * ローカルリポジトリにリモートリポジトリのURLを貼り付ける
 ```
-git remote add origin3 URLを貼り付ける
+git remote add source URLを貼り付ける
 ```
 
 * リモートリポジトリへプッシュ
 ```
-git push -u origin3 main
+git push -u source main
 ```
 
 * リモートリポジトリからローカルに反映
@@ -78,5 +78,5 @@ git checkout main
 
 * マージ
 ```
-git merge origin3/main
+git merge source/main
 ```
