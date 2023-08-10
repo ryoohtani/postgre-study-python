@@ -1,7 +1,0 @@
-setup.py
-backend/pydir/sub_module/__init__.py
-backend/pydir/sub_module/section_1.py
-python_setup.egg-info/PKG-INFO
-python_setup.egg-info/SOURCES.txt
-python_setup.egg-info/dependency_links.txt
-python_setup.egg-info/top_level.txt
