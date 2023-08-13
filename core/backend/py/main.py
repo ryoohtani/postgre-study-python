@@ -14,20 +14,34 @@ basic_data = psycopg2.connect("postgresql://{user}:{password}@{host}:{port}/{dbn
 
 cursor = basic_data.cursor()
 cursor.execute("select version();")
-result = cursor.fetchone()
 
+result = cursor.fetchone()
 print(result[0] + "に接続完了")
 
-# insert文修正中
-cursor.execute("""insert into test_table ("ID", "売上日", "社員ID", "商品分類", "商品名", "単価", "数量", "売上金額") VALUES 
-               ('500', '2023-8-12', 'a005', '飲料', 'コーラ', '150', '200', '15000')
+# Pythonからpostgreへinsertする
+cursor.execute("""insert into test_table ("ID", "売上日", "社員ID", "商品分類", "商品名", "単価", "数量", "売上金額") values 
+               (300, '2023812', 'a003', '飲料', 'コーラ', 150, 200, 15000)
 """)
 
-cursor.execute("select * from test_table")
+cursor.execute("""insert into test_table ("ID", "売上日", "社員ID", "商品分類", "商品名", "単価", "数量", "売上金額") values
+               (500, '2023815', 'a005', 'ゲーム機', '任天堂3DS', 15000, 600, 55000000)
+""")
 
-row = cursor.fetchall()
-for rows in row:
-    print(rows)
+# update       
+cursor.execute("""update test_table set "社員ID" = 'abcdefg' where "社員ID" = 'a002'
+""")
+
+# delete
+cursor.execute("""delete from test_table where "社員ID" = 'a001'
+""")
+
+basic_data.commit()
+
+# Pythonからpostgreへselect
+cursor.execute("""select * from test_table""")
+datas = cursor.fetchall()
+for data_list in datas:
+    print(data_list)
 
 cursor.close()
 basic_data.close()
