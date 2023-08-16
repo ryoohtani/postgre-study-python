@@ -1,7 +1,5 @@
 import psycopg2
 
-# 接続情報をどちらのbasic_dataを採用するか検討中
-# パターン1
 basic_data = psycopg2.connect("postgresql://{user}:{password}@{host}:{port}/{dbname}".format(
     user = "admin",
     password = "pypost",
@@ -9,44 +7,47 @@ basic_data = psycopg2.connect("postgresql://{user}:{password}@{host}:{port}/{dbn
     port = "5432",
     dbname = "test_database"))
 
-# パターン2
-# basic_data = psycopg2.connect(dbname = "test_database", host = "172.21.0.2", port = "5432", password = "pypost", user = "admin")
-
 cursor = basic_data.cursor()
-cursor.execute("select version();")
 
-result = cursor.fetchone()
-print(result[0] + "に接続完了")
+# CREATE文
+cursor.execute("""
+                CREATE TABLE learning_table(
+                EMPLOYEE_CODE varchar(10) NOT NULL,
+                POSITION_NO varchar(5) NOT NULL,
+                GENDER varchar(1),
+                BASE_SALARY int,
+                DATE_OF_HIRE date,
+                PRIMARY KEY(EMPLOYEE_CODE))
+               """)
 
-# Pythonからpostgreへinsertする
-cursor.execute("""insert into test_table(
-               "ID", "売上日", "社員ID", "商品分類", "商品名", "単価", "数量", "売上金額") 
-               values(
-               300, '2023812', 'a003', '飲料', 'コーラ', 150, 200, 15000)""")
-
-cursor.execute("""insert into test_table(
-               "ID", "売上日", "社員ID", "商品分類", "商品名", "単価", "数量", "売上金額") 
-               values
-               (500, '2023815', 'a005', 'ゲーム機', '任天堂3DS', 15000, 600, 55000000)
-""")
+# Pythonからpostgresへinsert
+cursor.execute("""
+               insert into learning_table(
+               EMPLOYEE_CODE, POSITION_NO, GENDER, BASE_SALARY, DATE_OF_HIRE
+               ) values ('s001', '1', '男', '200000', '2023-8-01'),
+               ('s002', '2', '女', '210000', '2023-8-10'),
+               ('s003', '3', '男', '220000', '2023-8-15'),
+               ('s010', '4', '男', '22000', '2023-8-20')
+               """)
 
 # update       
-cursor.execute("""update test_table set "社員ID" = 'abcdef' where "社員ID" = 'a002'""")
+cursor.execute("""update learning_table set EMPLOYEE_CODE = 's004' where EMPLOYEE_CODE = 's010'""")
 
 # delete
-cursor.execute("""delete from test_table where "社員ID" = 'a001'""")
+cursor.execute("""delete from learning_table where EMPLOYEE_CODE = 's004'""")
 
-# basic_data.commit()
+basic_data.commit()
 
 # Pythonからpostgreへselect
-cursor.execute("""select * from test_table""")
-# cursor.execute("""select * from test_table where "社員ID" = 'a006'""")
+cursor.execute("""select * from learning_table""")
+datas = cursor.fetchall()
+for data_list in datas:
+    print(data_list)
+
+cursor.execute("""select * from learning_table where gender = '男'""")
 datas = cursor.fetchall()
 for data_list in datas:
     print(data_list)
 
 cursor.close()
 basic_data.close()
-
-
-sqlalchemy
