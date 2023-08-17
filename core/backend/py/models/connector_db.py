@@ -9,7 +9,7 @@ class DbConnecotor(object):
         self.port = port
         self.dbname = dbname
         # DB接続
-        self.connection = None
+        self.psyconnect = None
         # カーソルを作成してDB操作
         self.cursor = None
 
@@ -22,4 +22,4 @@ class DbConnecotor(object):
         port = self.port,
         dbname = self.dbname
         )
-        self.cursor = self.connection.cursor()
+        self.cursor = self.psyconnect.cursor()
