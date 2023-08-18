@@ -16,10 +16,10 @@ class DbConnecotor(object):
     # psycopg2を用いてDB接続を行う
     def pypost_connect(self):
         self.psyconnect = psycopg2.connect(
-        user = self.user,
-        password = self.password,
-        host = self.host,
-        port = self.port,
-        dbname = self.dbname
+            user = self.user,
+            password = self.password,
+            host = self.host,
+            port = self.port,
+            dbname = self.dbname
         )
         self.cursor = self.psyconnect.cursor()
