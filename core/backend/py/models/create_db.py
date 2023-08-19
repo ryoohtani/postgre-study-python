@@ -17,3 +17,18 @@ class DbCreate(object):
         """
         self.basic_data.cursor.execute(cleate_learning_table)
         self.basic_data.psyconnect.commit()
+
+
+    def subid_table(self):
+        cleate_subid_table = """
+            CREATE TABLE IF NOT EXISTS subid_table(
+                EMPLOYEE_CODE varchar(10) NOT NULL,
+                EMPLOYEE_NAME varchar(20),
+                COUNTRY varchar(20) NOT NULL,
+                COUNTRY_NO int NOT NULL,
+                ENROLLMENT_ID int NOT NULL,
+                PRIMARY KEY(EMPLOYEE_CODE)
+            )
+        """
+        self.basic_data.cursor.execute(cleate_subid_table)
+        self.basic_data.psyconnect.commit()
