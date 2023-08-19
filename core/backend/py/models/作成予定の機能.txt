@@ -5,7 +5,8 @@ main.pyに記載されているselectやupdateなどを行えるコードの作�
 
 
 追加機能
-1.create_db.pyで2つ目のテーブル作成機能
+1.create_db.pyで2つ目のテーブル作成機能 
+完了
 2.insert_db.pyで2つ目のテーブルのデータ作成機能
 3.select文で抽出
 4.selectとjoinでテーブル結合
