@@ -20,7 +20,7 @@ services:
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: pypost
-      # POSTGRES_DBを記載すると自動で自身で決めた名前のテーブルが作成される
+      # POSTGRES_DBを記載すると自動で自身で決めた名前のデータベースが作成される
       POSTGRES_DB: pydb
 
   pgadmin:
