@@ -15,6 +15,7 @@ basic_data.pypost_connect()
 # テーブルの作成
 db_creator = DbCreate(basic_data)
 db_creator.learning_table()
+db_creator.subid_table()
 
 # テーブルへinsert
 db_insert = DbInsert(basic_data)
