@@ -18,7 +18,6 @@ class DbCreate(object):
         self.basic_data.cursor.execute(cleate_learning_table)
         self.basic_data.psyconnect.commit()
 
-
     def subid_table(self):
         cleate_subid_table = """
             CREATE TABLE IF NOT EXISTS subid_table(
