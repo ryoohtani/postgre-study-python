@@ -1,6 +1,7 @@
 from models.connector_db import DbConnecotor
 from models.create_db import DbCreate
 from models.insert_db import DbInsert
+from models.select_db import DbSelect
 
 basic_data = DbConnecotor(
     user = "admin",
@@ -20,7 +21,12 @@ db_creator.subid_table()
 # テーブルへinsert
 db_insert = DbInsert(basic_data)
 db_insert.insert_data()
+db_insert.insert_subdata()
 
+# テーブルの抽出
+db_select = DbSelect(basic_data)
+db_select.select_data()
+db_select.select_data2()
 
 # # update       
 # cursor.execute("""update learning_table set EMPLOYEE_CODE = 's004' where EMPLOYEE_CODE = 's010'""")
