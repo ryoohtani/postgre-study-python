@@ -29,7 +29,7 @@ cursor.execute("""
                 PRIMARY KEY(EMPLOYEE_CODE))
                """)
 
-# 以下コメントアウトはナレッジとして保管
+# 以下コメントアウトはナレッジとして保管(1行ずつデータの挿入)
 # cursor.execute("""
 #                insert into learning_table(
 #                EMPLOYEE_CODE, POSITION_NO, GENDER, BASE_SALARY, DATE_OF_HIRE
