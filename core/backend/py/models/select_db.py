@@ -19,3 +19,15 @@ class DbSelect(object):
         select_subid = self.basic_data.cursor.fetchall()
         for select_cli2 in select_subid:
             print(select_cli2)
+
+    def select_data_join(self):
+        select_join_table = """
+            select lt.GENDER, st.EMPLOYEE_NAME, st.COUNTRY 
+            from learning_table as lt 
+            join subid_table as st on lt.EMPLOYEE_CODE = st.EMPLOYEE_CODE 
+            where lt.EMPLOYEE_CODE in ('s001', 's002');
+        """
+        self.basic_data.cursor.execute(select_join_table)
+        select_join = self.basic_data.cursor.fetchall()
+        for select_cli3 in select_join:
+            print(select_cli3)
