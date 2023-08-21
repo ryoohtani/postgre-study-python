@@ -102,15 +102,21 @@ pylint 対象ファイル
 *アプリ実行前のDB*
 * PGAdmin4とPostgreSQLを使用
 
-<img width="361" alt="part0" src="https://github.com/ryoohtani/simple-chatbot-python/assets/139527783/1ab55e10-074c-493f-9880-7be1a2e7e936">
+![実行前のDB](https://github.com/ryoohtani/postgre-study-python/assets/139527783/e2b5465e-2097-46b1-94e4-73f9507852b4)
 
 *アプリ実行後のDB*
 * learning_table
 
-<img width="388" alt="スクリーンショット 2023-08-09 9 03 31" src="https://github.com/ryoohtani/simple-chatbot-python/assets/139527783/f081d7f1-bf26-4909-bd05-7fac3393c67a">
+![lt](https://github.com/ryoohtani/postgre-study-python/assets/139527783/c4ca9b52-698e-4fc8-8e9d-1f9f31e137bf)
 
 * subid_table
 
+![st](https://github.com/ryoohtani/postgre-study-python/assets/139527783/8c154999-3309-4164-978f-4785cccbaf0e)
+
 *アプリ実行後のCLI*
 
+<img width="419" alt="アプリ実行後のcli" src="https://github.com/ryoohtani/postgre-study-python/assets/139527783/947bd175-e69e-435a-a90e-4122e5e59032">
+
 *テーブル結合*
+
+<img width="595" alt="join" src="https://github.com/ryoohtani/postgre-study-python/assets/139527783/3181ce67-a5f8-473a-93bf-65a5a5a34350">
