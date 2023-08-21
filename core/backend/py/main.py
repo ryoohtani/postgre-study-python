@@ -27,25 +27,4 @@ db_insert.insert_subdata()
 db_select = DbSelect(basic_data)
 db_select.select_data()
 db_select.select_data2()
-
-# # update       
-# cursor.execute("""update learning_table set EMPLOYEE_CODE = 's004' where EMPLOYEE_CODE = 's010'""")
-
-# # delete
-# cursor.execute("""delete from learning_table where EMPLOYEE_CODE = 's004'""")
-
-# basic_data.commit()
-
-# # Pythonからpostgreへselect
-# cursor.execute("""select * from learning_table""")
-# datas = cursor.fetchall()
-# for data_list in datas:
-#     print(data_list)
-
-# cursor.execute("""select * from learning_table where gender = '男'""")
-# datas = cursor.fetchall()
-# for data_list in datas:
-#     print(data_list)
-
-# cursor.close()
-# basic_data.close()
+db_select.select_data_join()
