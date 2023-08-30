@@ -100,7 +100,8 @@ pylint 対象ファイル
 ```
 ---
 *アプリ実行前のDB*
-* PGAdmin4とPostgreSQLを使用
+* PGAdmin4とPostgreSQLを使用(ソースコード配置場所は以下)\
+/core/backend/py/models
 
 ![実行前のDB](https://github.com/ryoohtani/postgre-study-python/assets/139527783/e2b5465e-2097-46b1-94e4-73f9507852b4)
 
@@ -120,3 +121,15 @@ pylint 対象ファイル
 *テーブル結合*
 
 <img width="595" alt="join" src="https://github.com/ryoohtani/postgre-study-python/assets/139527783/3181ce67-a5f8-473a-93bf-65a5a5a34350">
+
+---
+**sqlalchemyのCRUDアプリ(通常のSQL文と比較用)**
+
+*sqlalchemyのソースコード配置場所\
+/core/backend/py/sqlalc/models*
+
+*動画でのCRUDアプリ動作検証*
+
+*creat*
+
+*select insert read delet joinなど*
