@@ -130,6 +130,22 @@ pylint 対象ファイル
 
 *動画でのCRUDアプリ動作検証*
 
-*creat*
+*creat実施*
 
-*select insert read delet joinなど*
+https://github.com/ryoohtani/postgre-study-python/assets/139527783/38fa86ad-979f-42f4-ac36-da180904a979
+
+*insert実施*
+
+https://github.com/ryoohtani/postgre-study-python/assets/139527783/0f6e4978-c972-459f-825e-d166e8f71539
+
+*update実施*
+
+https://github.com/ryoohtani/postgre-study-python/assets/139527783/2f94a578-95ac-4804-b7f7-0f2ab5cad707
+
+*delete実施*
+
+https://github.com/ryoohtani/postgre-study-python/assets/139527783/2687ce75-d45e-44c9-926e-03977bdd15bc
+
+*selectとjoin実施*
+
+https://github.com/ryoohtani/postgre-study-python/assets/139527783/b05b6d6e-847a-4d3d-b8c7-abaddae18ee4
