@@ -33,3 +33,34 @@ services:
       PGADMIN_DEFAULT_PASSWORD: pypost
     depends_on:
       - postgres
+
+  mongo:
+    image: mongo
+    container_name: "mongo-db7"
+    volumes:
+      - ./mongo_data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: pymong
+    # newtworksは不要？
+    # networks:
+    #   - mongo_network
+    expose:
+      - 27017
+    ports:
+      - 27017:27017
+
+  mongo-express:
+    # M1macはARM64なので、linux/arm64/v8を記載(こちらも不要かもしれない、ないとコンテナを手動で立ち上げないといけない。)
+    platform: linux/arm64/v8
+    image: mongo-express
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+      ME_CONFIG_MONGODB_ADMINPASSWORD: pymong
+      # 以下2つのME_CONFIG_MONGODB_URLとME_CONFIG_MONGODB_SERVERはGUIのアプリのアクセスする際に必要。今回はサービス情報を元にアクセスする方を採用(SERVERの方)
+      # ME_CONFIG_MONGODB_URL: mongodb://admin:pymong@mongo:27017/
+      ME_CONFIG_MONGODB_SERVER: mongo
+    depends_on:
+      - mongo
