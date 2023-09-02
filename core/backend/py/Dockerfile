@@ -18,6 +18,8 @@ RUN pip install --upgrade setuptools
 # ポスグレにアクセスをするライブラリ2つ
 RUN pip install --upgrade psycopg2
 RUN pip install --upgrade sqlalchemy
+# mongoにアクセスするためのライブラリ
+RUN pip install --upgrade pymongo
 
 # コードスタイルの制約をするライブラリ
 RUN pip install --upgrade pep8
