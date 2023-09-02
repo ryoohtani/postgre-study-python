@@ -51,7 +51,6 @@ services:
       - 27017:27017
 
   mongo-express:
-    # M1macはARM64なので、linux/arm64/v8を記載(こちらも不要かもしれない、ないとコンテナを手動で立ち上げないといけない。)
     platform: linux/arm64/v8
     image: mongo-express
     ports:
