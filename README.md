@@ -11,25 +11,25 @@
 
 * ビルドコマンド
 ```
-docker-compose build
+docker compose build
 ```
 * 環境の立ち上げ
 ```
-docker-compose up -d
+docker compose up -d
 ```
 * Pythonのコンテナにアクセス
 ```
-docker exec -it sql-python /bin/bash
+docker exec -it sql-python /bash
 ```
 
 * PostgreSQLのコンテナにアクセス
 ```
-docker exec -it postgres-db /bin/bash  
+docker exec -it postgres-db /bash  
 ```
 
 * pgadmin4のコンテナにアクセス
 ```
-docker exec -it pgadmin4-db /bin/bash  
+docker exec -it pgadmin4-db /bash  
 ```
 
 *Pythonのコマンド*
