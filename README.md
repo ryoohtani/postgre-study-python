@@ -19,17 +19,17 @@ docker compose up -d
 ```
 * Pythonのコンテナにアクセス
 ```
-docker exec -it sql-python /bash
+docker exec -it sql-python bash
 ```
 
 * PostgreSQLのコンテナにアクセス
 ```
-docker exec -it postgres-db /bash  
+docker exec -it postgres-db bash  
 ```
 
 * pgadmin4のコンテナにアクセス
 ```
-docker exec -it pgadmin4-db /bash  
+docker exec -it pgadmin4-db bash  
 ```
 
 *Pythonのコマンド*
